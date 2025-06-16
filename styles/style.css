@@ -14,14 +14,18 @@ html {
   block-size: 100%;
   margin: auto;
   color: #fff;
-  font-family: "Fira Sans Condensed", sans-serif;
+  font-family: "Fira Sans Condensed", Arial, sans-serif;
   font-size: 18px;
   background-color: #1b1919;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
 }
 
-.result__video, .search-form__textfield, .search-form__pseudo-checkbox, .button, .content__card-link {
+.result__video,
+.search-form__textfield,
+.search-form__pseudo-checkbox,
+.button,
+.content__card-link {
   cursor: pointer;
 }
 
@@ -68,7 +72,7 @@ ol {
 
 .search-form {
   display: flex;
-  align-items: flex-start;
+  align-items: flex-end;
   justify-content: space-between;
   width: 100%;
   gap: 24px;
@@ -79,7 +83,7 @@ ol {
 }
 
 .search-form__fieldset-title {
-  font-family: "Fira Sans Condensed";
+  font-family: "Fira Sans Condensed", Arial, sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -98,7 +102,7 @@ ol {
 }
 
 .search-form__label:has(:focus-visible) {
-  outline: 2px solid #d17f33;
+  outline: 1px solid #fff;
 }
 
 .search-form__pseudo-checkbox {
@@ -124,16 +128,19 @@ ol {
 }
 
 .search-form__textfield {
-  color: rgba(255, 255, 255, 0.7);
-  font-family: "Fira Sans Condensed";
+  color: #ffffff;
+  font-family: "Fira Sans Condensed", Arial, sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   border-top: 1px solid #fff;
   border-bottom: 1px solid #fff;
-  background-color: #1b1919;
+  border-left: none;
+  border-right: none;
+  background-color: transparent;
   appearance: none;
+  min-width: 225px;
 }
 
 .search-form__textfield:focus {
@@ -153,8 +160,7 @@ ol {
   width: 711px;
   height: 386px;
   margin-bottom: 16px;
-    position: relative;
-
+  position: relative;
 }
 
 .result__video {
@@ -168,13 +174,13 @@ ol {
   background-color: transparent;
   color: #fff;
   text-align: center;
-  font-family: "Fira Sans Condensed";
+  font-family: "Fira Sans Condensed", Arial, sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
   border: 1px solid #fff;
-  height: 34px;
+  min-height: 34px;
 }
 
 .button:hover {
@@ -219,7 +225,7 @@ ol {
 
 .title {
   color: #fff;
-  font-family: Oswald;
+  font-family: Oswald, Arial, sans-serif;
   font-size: 75px;
   font-style: normal;
   font-weight: 700;
@@ -230,7 +236,7 @@ ol {
 .content__list-container {
   position: relative;
   height: 298px;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: auto;
 }
 
@@ -253,31 +259,25 @@ ol {
   align-items: center;
 }
 
-.cards-list-item-template {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
 .content__card-link {
+  display: block;
   color: #fff;
   text-decoration: none;
 }
 
-.content__video-card:hover {
+.content__card-link:hover {
   text-decoration: underline;
 }
 
-.content__video-card:active {
+.content__card-link:active {
   background-color: #545050;
-
 }
 
-.content__video-card:focus-visible {
-outline: 1px solid #FFF;;
+.content__card-link:focus-visible {
+  outline: 1px solid #fff;
 }
 
-.content__video-card:focus {
+.content__card-link:focus {
   outline: none;
 }
 
@@ -298,28 +298,27 @@ outline: 1px solid #FFF;;
 
 .content__video-card-description-container {
   flex-grow: 1;
+  line-clamp: 4;
 }
 
 .content__video-card-title {
-  font-family: Oswald;
+  font-family: Oswald, Arial, sans-serif;
   max-width: 196px;
   font-size: 30px;
   font-style: normal;
   font-weight: 700;
   line-height: 100%; /* 30px */
   text-transform: uppercase;
-  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
 .content__video-card-description {
-  font-family: "Fira Sans Condensed";
+  font-family: "Fira Sans Condensed", Arial, sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
   line-height: 16.2px; /* 90% */
-  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -332,9 +331,4 @@ outline: 1px solid #FFF;;
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
   white-space: nowrap;
-}
-
-.preloader {
-position: absolute;
-
 }
